@@ -1,6 +1,8 @@
+import http from "http"
 import { Server } from "socket.io"
 
-const io = new Server({ cors: { origin: "*" } })
+const server = new http.createServer()
+const io = new Server(server, { cors: { origin: "*" } })
 
 const PORT = process.env.PORT || 3001;
 
@@ -20,4 +22,4 @@ io.on("connection", (socket) => {
     });
 })
 
-io.listen(PORT)
+server.listen(PORT)
