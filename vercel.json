@@ -7,6 +7,9 @@
         }
     ],
     "routes": [
-        { "handle": "index.js", "src": "/" }
+        {
+            "src": "/(.*)",
+            "dest": "/"
+        }
     ]
 }
